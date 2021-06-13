@@ -4,7 +4,7 @@
 #include "shared.h"
 
 #include "take_input.h"
-#include "read_file.h"
+#include "work_file.h"
 #include "fill_area.h"
 
 
@@ -23,7 +23,7 @@ int main()
   print_data(grid,rows,cols);
   fill_area(grid,rows,cols,x,y);
   print_data(grid,rows,cols);
-
+  write_data(grid,rows,cols);
 
   free(grid);
   return 0;

@@ -8,3 +8,5 @@
 struct pixel *get_file_data(char*);
 
 void get_dimentions(int* rows,int *cols);
+
+void write_data(struct pixel *,int ,int );

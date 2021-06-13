@@ -5,40 +5,40 @@ int sum(struct pixel *data,int rows,int cols,int x, int y){
   return (data+x+y*cols)->R+(data+x+y*cols)->G+(data+x+y*cols)->B;
 }
 
-void fill_area(struct pixel *data, int rows, int cols, int x, int y)
+void fill_area(struct pixel *data, int rows, int cols, int x, int y, int starter)
 {
   int next;
-  int current = (data+x+y*cols)->R+(data+x+y*cols)->G+(data+x+y*cols)->B;
+  //int current = (data+x+y*cols)->R+(data+x+y*cols)->G+(data+x+y*cols)->B;
   int difference;
   (data+x+y*cols)->R=0;
   (data+x+y*cols)->G=0;
   (data+x+y*cols)->B=0;
   if(x+1<cols && x+1>=0 && y>=0 && y<rows){
     next=sum(data,rows,cols,x+1,y);
-    difference = next-current;
+    difference = next-starter;
     if(difference>=-3 && difference<=3 && next!=0){
-      fill_area(data,rows,cols,x+1,y);
+      fill_area(data,rows,cols,x+1,y,starter);
     }
   }
   if(x<cols && x>=0 && y+1>=0 && y+1<rows){
     next=sum(data,rows,cols,x,y+1);
-    difference = next-current;
+    difference = next-starter;
     if(difference>=-3 && difference<=3 && next!=0){
-      fill_area(data,rows,cols,x,y+1);
+      fill_area(data,rows,cols,x,y+1,starter);
     }
   }
   if(x-1<cols && x-1>=0 && y>=0 && y<rows){
     next=sum(data,rows,cols,x-1,y);
-    difference = next-current;
+    difference = next-starter;
     if(difference>=-3 && difference<=3 && next!=0){
-      fill_area(data,rows,cols,x-1,y);
+      fill_area(data,rows,cols,x-1,y,starter);
     }
   }
   if(x<cols && x>=0 && y-1>=0 && y-1<rows){
     next=sum(data,rows,cols,x,y-1);
-    difference = next-current;
+    difference = next-starter;
     if(difference>=-3 && difference<=3 && next!=0){
-      fill_area(data,rows,cols,x,y-1);
+      fill_area(data,rows,cols,x,y-1,starter);
     }
   }
   

@@ -1,8 +1,8 @@
 #include "take_input.h"
 
 void get_filename(char* var){
-  char filename[1000];
-  printf("filename?");
+  char filename[100];
+  printf("filename: ");
   scanf("%s",filename);
   //return filename;
   //*(var) = filename;
@@ -10,7 +10,7 @@ void get_filename(char* var){
 }
 
 void get_coordinates(int* one, int* two){
-  printf("coordinates? ");
+  printf("coordinates: ");
   scanf("%d %d", one, two);
 
 }

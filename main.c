@@ -17,11 +17,12 @@ int main()
   get_coordinates(&x,&y);
   struct pixel *grid = get_file_data(filename);
   int rows,cols;
-  get_dimentions(&rows,&cols);
+  get_dimentions(filename,&rows,&cols);
 
   printf("%d %d", rows, cols);
   print_data(grid,rows,cols);
-  fill_area(grid,rows,cols,x,y);
+  int starter = (grid+x+y*cols)->R+(grid+x+y*cols)->G+(grid+x+y*cols)->B;
+  fill_area(grid,rows,cols,x,y,starter);
   print_data(grid,rows,cols);
   write_data(grid,rows,cols);
 

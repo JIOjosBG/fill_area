@@ -7,6 +7,7 @@ void print_data(struct pixel *data,int rows,int cols){
     if(i%3==0){
       printf("\n");
     }
-    printf("%d:%d:%d\t", (data+i)->R, (data+i)->G, (data+i)->B);
+    printf("%d:%d:%d ", (data+i)->R, (data+i)->G, (data+i)->B);
   }
+  printf("\n");
 }

@@ -4,8 +4,6 @@ void get_filename(char* var){
   char filename[100];
   printf("filename: ");
   scanf("%s",filename);
-  //return filename;
-  //*(var) = filename;
   strcpy(var, filename);
 }
 

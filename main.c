@@ -8,8 +8,7 @@
 #include "fill_area.h"
 
 
-int main()
-{
+void start() {
   //ime na fail
   char filename[1000];
   //koordinati za zapylvane
@@ -37,5 +36,10 @@ int main()
   write_data(grid,rows,cols);
   //osvobojdavane na zadelenata pamet
   free(grid);
+}
+
+int main()
+{
+  start();
   return 0;
 }
